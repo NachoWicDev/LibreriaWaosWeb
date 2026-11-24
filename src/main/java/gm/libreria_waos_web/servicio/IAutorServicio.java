@@ -1,4 +1,4 @@
-package gm.libreria_waos_spring.servicio;
+package gm.libreria_waos_web.servicio;
 
 public interface IAutorServicio {
     void listarAutores();

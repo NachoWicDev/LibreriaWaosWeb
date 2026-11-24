@@ -1,4 +1,4 @@
-package gm.libreria_waos_spring.util;
+package gm.libreria_waos_web.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

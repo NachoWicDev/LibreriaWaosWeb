@@ -1,10 +1,9 @@
-package gm.libreria_waos_spring;
+package gm.libreria_waos_web;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LibreriaWaosSpringApplicationTests {
+class LibreriaWaosWebApplicationTests {
 
 	// @Test
 	void contextLoads() {

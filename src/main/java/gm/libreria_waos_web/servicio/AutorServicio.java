@@ -1,12 +1,12 @@
-package gm.libreria_waos_spring.servicio;
+package gm.libreria_waos_web.servicio;
 
-import gm.libreria_waos_spring.LibreriaWaosSpringApplication;
-import gm.libreria_waos_spring.exception.ConflictoException;
-import gm.libreria_waos_spring.exception.RecursoNoEncontradoException;
-import gm.libreria_waos_spring.exception.ValidacionException;
-import gm.libreria_waos_spring.modelo.Autor;
-import gm.libreria_waos_spring.modelo.Libro;
-import gm.libreria_waos_spring.repositorio.AutorRepositorio;
+import gm.libreria_waos_web.LibreriaWaosWebApplication;
+import gm.libreria_waos_web.exception.ConflictoException;
+import gm.libreria_waos_web.exception.RecursoNoEncontradoException;
+import gm.libreria_waos_web.exception.ValidacionException;
+import gm.libreria_waos_web.modelo.Autor;
+import gm.libreria_waos_web.modelo.Libro;
+import gm.libreria_waos_web.repositorio.AutorRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,14 +15,14 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
-import static gm.libreria_waos_spring.util.ConsolaUtil.*;
+import static gm.libreria_waos_web.util.ConsolaUtil.*;
 
 @Service
 public class AutorServicio implements IAutorServicio {
     @Autowired
     private AutorRepositorio autorRepositorio;
 
-    private static final Logger logger = LoggerFactory.getLogger(LibreriaWaosSpringApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(LibreriaWaosWebApplication.class);
 
     private final String NL = System.lineSeparator(); // Salto de línea genérico para cualquier plataforma o SO
 

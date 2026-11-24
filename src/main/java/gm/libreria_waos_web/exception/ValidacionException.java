@@ -1,4 +1,4 @@
-package gm.libreria_waos_spring.exception;
+package gm.libreria_waos_web.exception;
 
 public class ValidacionException extends BaseException {
     public ValidacionException(String message) {

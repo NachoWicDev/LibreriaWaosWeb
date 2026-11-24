@@ -1,6 +1,6 @@
-package gm.libreria_waos_spring.repositorio;
+package gm.libreria_waos_web.repositorio;
 
-import gm.libreria_waos_spring.modelo.Libro;
+import gm.libreria_waos_web.modelo.Libro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

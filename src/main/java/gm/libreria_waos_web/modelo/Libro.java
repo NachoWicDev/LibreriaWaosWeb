@@ -1,4 +1,4 @@
-package gm.libreria_waos_spring.modelo;
+package gm.libreria_waos_web.modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

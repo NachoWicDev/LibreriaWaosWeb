@@ -1,9 +1,9 @@
-package gm.libreria_waos_spring.servicio;
+package gm.libreria_waos_web.servicio;
 
-import gm.libreria_waos_spring.modelo.Autor;
-import gm.libreria_waos_spring.modelo.Libro;
-import gm.libreria_waos_spring.repositorio.AutorRepositorio;
-import gm.libreria_waos_spring.repositorio.LibroRepositorio;
+import gm.libreria_waos_web.modelo.Autor;
+import gm.libreria_waos_web.modelo.Libro;
+import gm.libreria_waos_web.repositorio.AutorRepositorio;
+import gm.libreria_waos_web.repositorio.LibroRepositorio;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -98,7 +98,7 @@ public class LibroServicioTest {
         // 2. ACT & ASSERT
         // Verificamos que lance la excepción ConflictoException
         org.junit.jupiter.api.Assertions.assertThrows(
-                gm.libreria_waos_spring.exception.ConflictoException.class,
+                gm.libreria_waos_web.exception.ConflictoException.class,
                 () -> libroServicio.validarLibroDuplicado(titulo, idAutor)
         );
     }

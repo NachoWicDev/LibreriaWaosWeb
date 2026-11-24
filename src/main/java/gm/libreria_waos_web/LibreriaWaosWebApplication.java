@@ -1,7 +1,7 @@
-package gm.libreria_waos_spring;
+package gm.libreria_waos_web;
 
-import gm.libreria_waos_spring.servicio.IAutorServicio;
-import gm.libreria_waos_spring.servicio.ILibroServicio;
+import gm.libreria_waos_web.servicio.IAutorServicio;
+import gm.libreria_waos_web.servicio.ILibroServicio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Scanner;
 
 @SpringBootApplication
-public class LibreriaWaosSpringApplication implements CommandLineRunner {
+public class LibreriaWaosWebApplication implements CommandLineRunner {
 	// Creación de objetos para la conexión entre el usuario y la BD.
 	@Autowired
 	private ILibroServicio libroServicio; // Inyectar dependencia de servicio a la capa de presentación
@@ -20,7 +20,7 @@ public class LibreriaWaosSpringApplication implements CommandLineRunner {
 	@Autowired
 	private IAutorServicio autorServicio; // Inyectar dependencia de servicio a la capa de presentación
 
-	private static final Logger logger = LoggerFactory.getLogger(LibreriaWaosSpringApplication.class); // Logger para enviar mensajes por consola
+	private static final Logger logger = LoggerFactory.getLogger(LibreriaWaosWebApplication.class); // Logger para enviar mensajes por consola
 
 	private final String NL = System.lineSeparator(); // Salto de línea genérico para cualquier plataforma o SO
 
@@ -28,7 +28,7 @@ public class LibreriaWaosSpringApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		logger.info("\nIniciando la aplicacion\n");
 		// Inicializar fábrica de Spring y correr aplicación
-		SpringApplication.run(LibreriaWaosSpringApplication.class, args);
+		SpringApplication.run(LibreriaWaosWebApplication.class, args);
 		logger.info("\nAplicación finalizada\n");
 	}
 
