@@ -46,6 +46,12 @@ public class LibroServicio implements ILibroServicio {
 
     @Override
     @Transactional(readOnly = true)
+    public List<Libro> listarLibrosParaWeb() {
+        return libroRepositorio.findAllConAutor();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public void listarMasVendidos() {
         logger.info(NL + "--- Libros Más Vendidos ---" + NL);
 
