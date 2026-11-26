@@ -17,8 +17,8 @@
                         <p:menubar>
                             <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
                                         update=":forma-libros:libros-tabla" actionListener="#{indexControlador.cargarDatos}"/>
-                            <p:menuitem value="Nuevo Libro" icon="pi pi-fw pi-plus" actionListener="#{indexControlador.agregarLibro}"
-                                        update=":forma-modal:libro-ventana" oncomplete="PF('ventanaModalCliente').show"/>
+                            <p:menuitem value="Nuevo Libro" icon="pi pi-fw pi-plus" action="#{indexControlador.agregarLibro}"
+                                        update=":forma-modal:modal-libro" oncomplete="PF('ventanaModalLibro').show()"/>
                         </p:menubar>
                     </div>
                     <!-- Data Dable -->
@@ -57,6 +57,16 @@
                             </p:column>
                         </p:dataTable>
                     </div>
+                </h:form>
+                <h:form id="forma-modal">
+                    <p:dialog id="modal-libro" header="Detalles Libro" showEffect="fade" modal="true" widgetVar="ventanaModalLibro" responsive="true">
+                        <p:outputPanel id="libro-ventana" class="ui-fluid">
+                            <div class="field">
+                                <p:outputLabel for="titulo">Título</p:outputLabel>
+                                <p:inputText id="titulo" value="#{indexControlador.libroSeleccionado.titulo}" required="true"/>
+                            </div>
+                        </p:outputPanel>
+                    </p:dialog>
                 </h:form>
             </div>
         </h:body>

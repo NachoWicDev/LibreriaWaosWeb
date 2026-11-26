@@ -39,7 +39,7 @@ public class Libro {
 
     @Override
     public String toString() {
-        String disponible = this.getDisponible() ? "Sí" : "No";
+        String disponible = (this.getDisponible() != null && this.getDisponible()) ? "Sí" : "No";
         String tituloCorto = titulo.length() > 30 ? titulo.substring(0, 27) + "..." : titulo;
         tituloCorto = String.format("%-30s", tituloCorto);
         String autorCorto = autor.getNombre().length() > 30 ? autor.getNombre().substring(0, 27) + "..." : autor.getNombre();
