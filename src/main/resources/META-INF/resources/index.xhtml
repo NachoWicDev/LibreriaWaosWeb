@@ -17,7 +17,7 @@
                         <p:menubar>
                             <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
                                         update=":forma-libros:libros-tabla" actionListener="#{indexControlador.cargarDatos}"/>
-                            <p:menuitem value="Nuevo Libro" icon="pi pi-fw pi-plus" actionListener="#{indexControlador.cargarDatos.agregarLibro}"
+                            <p:menuitem value="Nuevo Libro" icon="pi pi-fw pi-plus" actionListener="#{indexControlador.agregarLibro}"
                                         update=":forma-modal:libro-ventana" oncomplete="PF('ventanaModalCliente').show"/>
                         </p:menubar>
                     </div>
