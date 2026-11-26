@@ -22,6 +22,7 @@ public class IndexControlador implements Serializable {
     ILibroServicio libroServicio;
     private List<Libro> libros;
     private static final Logger logger = LoggerFactory.getLogger(IndexControlador.class);
+    private Libro libroSeleccionado;
 
     @PostConstruct
     public void init() {
@@ -33,5 +34,9 @@ public class IndexControlador implements Serializable {
         for (Libro libro : this.libros) {
             logger.info("\n" + libro.toString());
         }
+    }
+
+    public void agregarLibro() {
+        this.libroSeleccionado = new Libro();
     }
 }
