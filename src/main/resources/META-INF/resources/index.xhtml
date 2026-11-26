@@ -43,7 +43,9 @@
                                 <p:tag value="#{cliente.disponible ? 'Sí' : 'No'}" severity="#{cliente.disponible ? 'success' : 'danger'}"/>
                             </p:column>
                             <p:column headerText="Precio">
-                                <h:outputText value="#{cliente.precio}"/>
+                                <h:outputText value="#{cliente.precio}">
+                                    <f:convertNumber type="currency" currencySymbol="$" minFractionDigits="2" maxFractionDigits="2"/>
+                                </h:outputText>
                             </p:column>
                             <p:column headerText="Ventas">
                                 <h:outputText value="#{cliente.ventas}"/>
