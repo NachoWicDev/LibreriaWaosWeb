@@ -9,12 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 import java.util.List;
 
 @Component
 @Data
-@ViewScoped // @ViewScoped: Conserva los datos del controlador durante toda la vista actual (hasta que se recargue o cambie de página).
+@ViewScoped
+// @ViewScoped: Conserva los datos del controlador durante toda la vista actual (hasta que se recargue o cambie de página).
 public class IndexControlador implements Serializable {
     @Autowired
     ILibroServicio libroServicio;
@@ -28,7 +30,6 @@ public class IndexControlador implements Serializable {
 
     public void cargarDatos() {
         this.libros = this.libroServicio.listarLibrosParaWeb();
-
         for (Libro libro : this.libros) {
             logger.info("\n" + libro.toString());
         }
