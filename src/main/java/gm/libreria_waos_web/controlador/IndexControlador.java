@@ -28,6 +28,9 @@ public class IndexControlador implements Serializable {
 
     public void cargarDatos() {
         this.libros = this.libroServicio.listarLibrosParaWeb();
-        this.libros.forEach(libro -> logger.info(libro.toString()));
+
+        for (Libro libro : this.libros) {
+            logger.info("\n" + libro.toString());
+        }
     }
 }
