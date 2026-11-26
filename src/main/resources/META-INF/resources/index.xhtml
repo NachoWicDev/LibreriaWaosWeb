@@ -10,19 +10,19 @@
         </h:head>
         <h:body>
             <div class="card">
-                <h:form id="forma-clientes">
+                <h:form id="forma-libros">
                     <p:growl id="mensajes" showDetails="true"/>
                     <!-- Menu bar -->
                     <div class="card">
                         <p:menubar>
                             <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
-                                        update=":forma-clientes:clientes-tabla" actionListener="#{indexControlador.cargarDatos}"/>
+                                        update=":forma-libros:libros-tabla" actionListener="#{indexControlador.cargarDatos}"/>
                         </p:menubar>
                     </div>
                     <!-- Data Dable -->
                     <div class="card">
-                        <p:dataTable value="#{indexControlador.libros}" var="cliente" id="clientes-tabla"
-                                        widgetVar="clientesTabla">
+                        <p:dataTable value="#{indexControlador.libros}" var="libro" id="libros-tabla"
+                                        widgetVar="librosTabla">
                             <f:facet name="header">
                                 <div class="flex justify-content-center flex-wrap card-container yellow-container">
                                     <div class="flex align-items-center justify-content-center w-30rem h-5rem bg-yellow-500 font-bold text-gray-900 border-round m-2">
@@ -31,27 +31,27 @@
                                 </div>
                             </f:facet>
                             <p:column headerText="Id">
-                                <h:outputText value="#{cliente.id}"/>
+                                <h:outputText value="#{libro.id}"/>
                             </p:column>
                             <p:column headerText="Título">
-                                <h:outputText value="#{cliente.titulo}"/>
+                                <h:outputText value="#{libro.titulo}"/>
                             </p:column>
                             <p:column headerText="Autor">
-                                <h:outputText value="#{cliente.autor.nombre}"/>
+                                <h:outputText value="#{libro.autor.nombre}"/>
                             </p:column>
                             <p:column headerText="Disponible">
-                                <p:tag value="#{cliente.disponible ? 'Sí' : 'No'}" severity="#{cliente.disponible ? 'success' : 'danger'}"/>
+                                <p:tag value="#{libro.disponible ? 'Sí' : 'No'}" severity="#{libro.disponible ? 'success' : 'danger'}"/>
                             </p:column>
                             <p:column headerText="Precio">
-                                <h:outputText value="#{cliente.precio}">
+                                <h:outputText value="#{libro.precio}">
                                     <f:convertNumber type="currency" currencySymbol="$" minFractionDigits="2" maxFractionDigits="2"/>
                                 </h:outputText>
                             </p:column>
                             <p:column headerText="Ventas">
-                                <h:outputText value="#{cliente.ventas}"/>
+                                <h:outputText value="#{libro.ventas}"/>
                             </p:column>
                             <p:column headerText="Existencias">
-                                <h:outputText value="#{cliente.existencias}"/>
+                                <h:outputText value="#{libro.existencias}"/>
                             </p:column>
                         </p:dataTable>
                     </div>
