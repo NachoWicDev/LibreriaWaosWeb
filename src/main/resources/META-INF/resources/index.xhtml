@@ -33,6 +33,24 @@
                             <p:column headerText="Id">
                                 <h:outputText value="#{cliente.id}"/>
                             </p:column>
+                            <p:column headerText="Título">
+                                <h:outputText value="#{cliente.titulo}"/>
+                            </p:column>
+                            <p:column headerText="Autor">
+                                <h:outputText value="#{cliente.autor.nombre}"/>
+                            </p:column>
+                            <p:column headerText="Disponible">
+                                <h:outputText value="#{cliente.disponible}"/>
+                            </p:column>
+                            <p:column headerText="Precio">
+                                <h:outputText value="#{cliente.precio}"/>
+                            </p:column>
+                            <p:column headerText="Ventas">
+                                <h:outputText value="#{cliente.ventas}"/>
+                            </p:column>
+                            <p:column headerText="Existencias">
+                                <h:outputText value="#{cliente.existencias}"/>
+                            </p:column>
                         </p:dataTable>
                     </div>
                 </h:form>
