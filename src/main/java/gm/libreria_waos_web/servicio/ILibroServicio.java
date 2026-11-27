@@ -6,6 +6,7 @@ import java.util.List;
 public interface ILibroServicio {
     void listarLibros();
     List<Libro> listarLibrosParaWeb();
+    void guardarLibroWeb(Libro libro);
     void listarMasVendidos();
     void listarPorNombre();
     void buscarLibroPorId();

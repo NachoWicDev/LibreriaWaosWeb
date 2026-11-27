@@ -28,6 +28,16 @@ public class AutorServicio implements IAutorServicio {
 
     @Override
     @Transactional(readOnly = true)
+    public List<Autor> listarAutoresParaWeb() {
+        return autorRepositorio.findAllConLibros();
+    }
+
+    public Autor buscarAutorPorIdWeb(Integer id) {
+        return autorRepositorio.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public void listarAutores() {
         logger.info(NL + "--- Lista de Autores ---" + NL);
 

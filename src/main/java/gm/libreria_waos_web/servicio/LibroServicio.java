@@ -51,6 +51,29 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
+    @Transactional
+    public void guardarLibroWeb(Libro libro) {
+        // 1. Calcular y settear valores por defecto
+        if (libro.getId() == null) {
+            libro.setVentas(0);
+        }
+        libro.setDisponible(libro.getExistencias() != null && libro.getExistencias() > 0);
+
+        // 1. Validar datos básicos.
+        validarLibro(libro.getTitulo(), libro.getAutor().getId(), libro.getPrecio(), libro.getExistencias(), libro.getVentas(), libro.getDisponible());
+
+        // 2. Validar que no esté duplicado si es nuevo.
+        if (libro.getId() == null) {
+            validarLibroDuplicado(libro.getTitulo(), libro.getAutor().getId());
+            libro.setVentas(0);
+        }
+
+        // 4. Guardar en la Base de Datos.
+        libroRepositorio.save(libro);
+        logger.info("Libro guardado desde la Web: \n" + libro.toString() + "\n");
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public void listarMasVendidos() {
         logger.info(NL + "--- Libros Más Vendidos ---" + NL);

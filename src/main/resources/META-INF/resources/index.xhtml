@@ -64,8 +64,33 @@
                             <div class="field">
                                 <p:outputLabel for="titulo">Título</p:outputLabel>
                                 <p:inputText id="titulo" value="#{indexControlador.libroSeleccionado.titulo}" required="true"/>
+                                <p:message for="titulo"/>
+                            </div>
+                            <div class="field">
+                                <p:outputLabel for="autor">Autor</p:outputLabel>
+                                <p:selectOneMenu id="autor" value="#{indexControlador.idAutorSeleccionado}" required="true">
+                                    <f:selectItem itemLabel="Seleccione un autor" noSelectionOption="true"/>
+                                    <f:selectItems value="#{indexControlador.autores}" var="a" itemLabel="#{a.nombre}" itemValue="#{a.id}"/>
+                                    <p:message for="autor"/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="field">
+                                <p:outputLabel for="precio">Precio</p:outputLabel>
+                                <p:inputNumber id="precio" value="#{indexControlador.libroSeleccionado.precio}" required="true"/>
+                                <p:message for="precio"/>
+                            </div>
+                            <div class="field">
+                                <p:outputLabel for="existencias">Existencias</p:outputLabel>
+                                <p:inputNumber id="existencias" value="#{indexControlador.libroSeleccionado.existencias}" required="true"/>
+                                <p:message for="existencias"/>
                             </div>
                         </p:outputPanel>
+                        <f:facet name="footer">
+                            <p:commandButton value="Guardar" icon="pi pi-check" process="@form" action="#{indexControlador.guardarLibro}"
+                                             update="@form, :forma-libros:libros-tabla, :mensajes"
+                                             oncomplete="if (args &amp;&amp; !args.validationFailed) PF('ventanaModalLibro').hide()"/>
+                            <p:commandButton value="Cancelar" icon="pi pi-times" onclick="PF('ventanaModalLibro').hide()" class="ui-button-secondary" type="button"/>
+                        </f:facet>
                     </p:dialog>
                 </h:form>
             </div>
